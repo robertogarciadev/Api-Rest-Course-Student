@@ -1,0 +1,26 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: msvc-course
+  config:
+    import: optional:configserver:http://localhost8088
+  data-source:
+    drive-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:8889/coursedb
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
